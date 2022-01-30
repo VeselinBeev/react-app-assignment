@@ -1,0 +1,2 @@
+export const GET_EMPLOYEES = "GET_EMPLOYEES";
+export const EMPLOYEES_ERROR = 'EMPLOYEES_ERROR';
