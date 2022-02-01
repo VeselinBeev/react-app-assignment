@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Employees } from './components/Employees';
 import Pagination from './components/Pagination';
+import { Filter } from './components/Filter';
 const App = () => {
 
 	const [employees, setEmployees] = useState([]);
@@ -21,9 +22,9 @@ const App = () => {
 				credentials: 'include',
 				headers: {
 					'Authorization': 'Basic ' + btoa('medium' + ":" + 'medium'),
-				}
-			 }
-			 );
+					}
+			 	}
+			);
 			setEmployees(res.data);
 			setLoading(false);
 		}
@@ -56,6 +57,7 @@ const App = () => {
 	console.log(employees);
 	return (
 		<div className="App">
+			<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
 			<Employees employees={currentEmployees} loading={loading} />
 			<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
 		</div>
