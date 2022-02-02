@@ -36,17 +36,16 @@ export const Employees = ({ employees, loading, bgColor }) => {
 		<Fragment>
 			{employees.map(employee => (
 				
-				<ul className="list" key={employee.id} style={{
+				<section className="section-list" key={employee.id} style={{
 					backgroundColor: bgColor,
 				}}>
-					
 					<Employee employee={employee} />
 					<select key={7} onClick={handleSelectDropdown}>
 						{backgroundOptions.map((option) => (
 							<option value={option.value}>{option.label}</option>
 						))}
 					</select>
-				</ul>
+				</section>
 			))}
 		</Fragment>
 	)

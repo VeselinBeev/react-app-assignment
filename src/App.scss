@@ -1,11 +1,21 @@
 
 @import './assets/scss/styles.scss';
 
-.list {
+.section-list {
 	padding: 20px;
 	display: block;
 	border: 1px solid black;
 	margin-top: 2rem;
+	.list-group {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		.list-item {
+			margin-right: .5rem;
+			font-weight: bold;
+		}
+	}
 	.list-item {
 		b {
 			font-weight: $font-weight-bold;
