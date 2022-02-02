@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import Avatar from './shared/Avatar'
-import noImage from './../assets/images/no-image.png'
 import { Preloader } from './shared/Preloader';
 import Employee from './Employee';
 export const Employees = ({ employees, loading, bgColor }) => {
@@ -34,6 +32,7 @@ export const Employees = ({ employees, loading, bgColor }) => {
 	
 	return (
 		<Fragment>
+			
 			{employees.map(employee => (
 				
 				<section className="section-list" key={employee.id} style={{

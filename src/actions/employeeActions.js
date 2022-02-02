@@ -2,8 +2,9 @@ import { GET_EMPLOYEES, EMPLOYEES_ERROR, UPDATE_EMPLOYEE, SET_LOADING } from "./
 
 const url = 'http://hiring.rewardgateway.net'
 
-export const getEmployees = () => async (dispatch) => {
+export const getEmployees = () => async dispatch => {
 	try {
+		setLoading();
 		const res = await fetch(`${url}/list/`, {
 			mode:'no-cors',
 			method: 'GET',
@@ -30,7 +31,7 @@ export const updateEmployee = employee => async dispatch => {
 		setLoading();
 
 		const res = await fetch(`${url}/list/`, {
-			body: JSON.stringify(log),
+			body: JSON.stringify(employee),
 			mode:'no-cors',
 			method: 'PUT',
 			credentials: 'include',

@@ -6,6 +6,7 @@ import Pagination from './components/shared/Pagination';
 import { Filter } from './components/Filter';
 import { Provider } from 'react-redux';
 import store from './store';
+import { getEmployees } from './actions/employeeActions';
 
 const App = () => {
 
@@ -16,6 +17,8 @@ const App = () => {
 
 	// make request
 	useEffect(() => {
+
+		getEmployees();
 		const fetchEmployees = async () => {
 			setLoading(true);
 			const res = await axios.get('https://hiring.rewardgateway.net/list', { 
@@ -41,28 +44,12 @@ const App = () => {
 
 	// change page 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-	// var formdata = new FormData();
-
-	// var requestOptions = {
-	// 	mode:'no-cors',
-	// 	method: 'GET',
-	// 	credentials: 'include',
-	// 	headers: {
-	// 	  'Authorization': 'Basic ' + btoa('medium' + ":" + 'medium'),
-	// 	},
-	// 	// if this is POST or PUT
-	// 	// body: formdata,
-	// 	// redirect: 'follow',
-	// };
-
+	
 	return (
 		<Provider store={store}>
-			<div className="App">
-				<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
-				<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
-				<Employees employees={currentEmployees} loading={loading} />
-			</div>
+			<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
+			<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
+			<Employees employees={currentEmployees} loading={loading} />
 		 </Provider>
 	);
 }
