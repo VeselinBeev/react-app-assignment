@@ -13,7 +13,6 @@ export const Filter = ({placeholder, data, name}) => {
 			return value.title.toLowerCase().includes(filteredWord.toLowerCase());
 		})
 
-		
 		setFilteredData(newFilterData)
 		
 	}

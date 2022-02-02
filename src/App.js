@@ -2,8 +2,11 @@ import './App.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Employees } from './components/Employees';
-import Pagination from './components/Pagination';
+import Pagination from './components/shared/Pagination';
 import { Filter } from './components/Filter';
+import { Provider } from 'react-redux';
+import store from './store';
+
 const App = () => {
 
 	const [employees, setEmployees] = useState([]);
@@ -53,14 +56,14 @@ const App = () => {
 	// 	// redirect: 'follow',
 	// };
 
-
-	console.log(employees);
 	return (
-		<div className="App">
-			<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
-			<Employees employees={currentEmployees} loading={loading} />
-			<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
-		</div>
+		<Provider store={store}>
+			<div className="App">
+				<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
+				<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
+				<Employees employees={currentEmployees} loading={loading} />
+			</div>
+		 </Provider>
 	);
 }
 
