@@ -18,7 +18,7 @@ export const Filter = ({placeholder, data, name}) => {
 	}
 
 	return (
-		<div className="filter-wrapper">
+		<div className="ves-b-filter-wrapper">
 			<div className="filter-input">
 				<input type="text" placeholder={placeholder} onChange={handleSearchedData} />
 				<button type="button" onClick={handleSearchedData}>Filter by {name}</button>

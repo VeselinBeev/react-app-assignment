@@ -1,0 +1,29 @@
+.ves-b-scroll-top {
+	position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 5px;
+    border: 2px solid $primary;
+	background: $white;
+	cursor: pointer;
+	transition: .3s all ease;
+	 
+	&:hover {
+		background: $accent;
+		border: 2px solid $accent;
+
+		&:before {
+			color: $primary;
+		}
+	}
+	&:before {
+		position: absolute;
+		content: '↖';
+		font-size: 32px;
+		color: $primary;
+		bottom: -5px;
+		left: 5px;
+	}
+}

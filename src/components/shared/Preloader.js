@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
-export const Preloader = () => {
+const Preloader = () => {
 	return (
-		<Fragment>
-			 <h1>LOADING</h1>
-			<div className="snip-progress-bar"></div>
-		</Fragment>
+		<div className="ves-b-spinner">
+			 <h1 className="spinner-title">LOADING</h1>
+			<div className="spinner-circle"></div>
+		</div>
 	)
 }
+export default Preloader;

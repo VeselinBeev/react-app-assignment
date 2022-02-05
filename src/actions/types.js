@@ -1,4 +1,2 @@
 export const GET_EMPLOYEES = "GET_EMPLOYEES";
-export const UPDATE_EMPLOYEE = "UPDATE_EMPLOYEE";
 export const SET_LOADING = "SET_LOADING";
-export const EMPLOYEES_ERROR = 'EMPLOYEES_ERROR';

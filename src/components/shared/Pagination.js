@@ -10,7 +10,7 @@ export const Pagination = ({ employeesPerPage, totalEmployees, paginate }) => {
 	}
 	return (
 		<nav>
-			<ul className="pagination">
+			<ul className="ves-b-pagination">
 				{pageNumbers.map(number => (
 					<li key={number} className="pagination-item">
 						<a onClick={() => paginate(number)} href="!#" className="pagination-link">

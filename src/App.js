@@ -1,39 +1,44 @@
 import './App.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Employees } from './components/Employees';
+import  Employees  from './components/Employees';
 import Pagination from './components/shared/Pagination';
+import ScrollTop from './components/shared/ScrollTop';
 import { Filter } from './components/Filter';
-import { Provider } from 'react-redux';
-import store from './store';
-import { getEmployees } from './actions/employeeActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getEmployees } from './actions/employeesActions';
+
 
 const App = () => {
 
-	const [employees, setEmployees] = useState([]);
+	// const [employees, setEmployees] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [employeesPerPage] = useState(20);
 
-	// make request
-	useEffect(() => {
+	const employees = useSelector((state) => state.allEmployees.employees);
+	const dispatch = useDispatch();
 
-		getEmployees();
-		const fetchEmployees = async () => {
-			setLoading(true);
-			const res = await axios.get('https://hiring.rewardgateway.net/list', { 
-				
-				mode:'no-cors',
-				method: 'GET',
-				credentials: 'include',
-				headers: {
-					'Authorization': 'Basic ' + btoa('medium' + ":" + 'medium'),
+	const fetchEmployees = async () => {
+		setLoading(true);
+		const res = await axios
+			.get('https://hiring.rewardgateway.net/list', {
+					mode: 'no-cors',
+					method: 'GET',
+					credentials: 'include',
+					headers: {
+						'Authorization': 'Basic ' + btoa('medium' + ":" + 'medium'),
 					}
-			 	}
-			);
-			setEmployees(res.data);
-			setLoading(false);
-		}
+				}
+			)
+			.catch((err) => {
+				console.log("Err: ", err);
+			});
+		dispatch(getEmployees(res.data));
+		setLoading(false);
+	};
+
+	useEffect(() => {
 		fetchEmployees();
 	}, []);
 	
@@ -46,11 +51,12 @@ const App = () => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 	
 	return (
-		<Provider store={store}>
+		<>
 			<Filter data={currentEmployees}  placeholder="Filter by Title..." name="Title" />
 			<Pagination employeesPerPage={employeesPerPage} totalEmployees={employees.length} paginate={paginate} />
 			<Employees employees={currentEmployees} loading={loading} />
-		 </Provider>
+			<ScrollTop/>
+		 </>
 	);
 }
 

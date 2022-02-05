@@ -7,7 +7,7 @@ export const Avatar = ({ src, alt, fallback }) => {
 		setError(true);
 	};
 
-	return error ? fallback : <img width="300" height="300" src={src} alt={alt} onError={onError} />;
+	return error ? fallback : <img className="def" src={src} alt={alt} onError={onError} />;
 }
 
 export default Avatar

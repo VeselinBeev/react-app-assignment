@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import employeeReducer from './employeeReducer';
+import employeesReducer from './employeesReducer';
 
-
-export default combineReducers({
-	employee: employeeReducer,
+const allReducers = combineReducers({
+	allEmployees: employeesReducer,
 });
+
+export default allReducers;

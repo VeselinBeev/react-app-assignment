@@ -1,0 +1,52 @@
+.ves-b-employee-list {
+	width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 0 0 13px -3px $darken-light;
+    max-width: 120rem;
+    margin: 20px auto;
+    padding: 15px;
+	border-radius: 5px;
+	background-color: $light;
+	.list-header {
+		min-width: 20rem;
+		padding-right: 1.5rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.header-actions {
+			width: 100%;
+			button {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+			select {
+				margin-bottom: 1rem;
+			}
+		}
+		img {
+			width: 5rem;
+			height: 5rem;
+			border-radius: 100%;
+			box-shadow: 0 0 7px 2px #656b61;
+			display:block;
+		}
+	}
+	.list-content {
+		.content-item {
+			display: flex;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			strong {
+				display: inline-block;
+				text-transform: capitalize;
+				font-weight: $font-weight-bold;
+				font-size: $font-size *1.6;
+			}
+			span {
+				display: block;
+				
+			}
+		}
+	}
+}

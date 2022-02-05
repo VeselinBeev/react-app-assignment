@@ -1,0 +1,30 @@
+.ves-b-pagination {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 120rem;
+	margin: 0 auto;
+	.pagination-item {
+		&:first-child {
+			display: none;
+		}
+		.pagination-link {
+			padding: ($gap * .5);
+			margin: ($gap * .5);
+			border: .1rem solid $darken-light;
+			width: ($font-size * 2.5);
+			text-align: center;
+			display: block;
+			text-decoration: none;
+			transition: .3s all ease;
+			color: $darken-light;
+			
+			&:hover,
+			&:focus {
+				background-color: $primary;
+				border: .1rem solid $primary;
+				color: $white;
+			}
+		}
+	}
+}
