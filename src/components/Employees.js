@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Avatar from './shared/Avatar';
 import noImage from './../assets/images/no-image.png';
 import Preloader from './shared/Preloader';
+
 const Employees = ({ employees, loading, bgColor }) => {
 	const backgroundOptions = [
 		{
@@ -83,7 +84,8 @@ const Employees = ({ employees, loading, bgColor }) => {
 						</p>
 						<p className="content-item">
 							<strong>Bio:&nbsp;</strong>
-							<span>{employee.bio}</span>
+							
+							<span>{ employee.bio }</span>
 						</p>
 					</div>
 				</div>

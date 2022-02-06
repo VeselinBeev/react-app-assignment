@@ -21,6 +21,7 @@ const App = () => {
 
 	const fetchEmployees = async () => {
 		setLoading(true);
+		
 		const res = await axios
 			.get('https://hiring.rewardgateway.net/list', {
 					mode: 'no-cors',
@@ -28,12 +29,13 @@ const App = () => {
 					credentials: 'include',
 					headers: {
 						'Authorization': 'Basic ' + btoa('medium' + ":" + 'medium'),
-					}
+					},
 				}
 			)
 			.catch((err) => {
 				console.log("Err: ", err);
 			});
+		
 		dispatch(getEmployees(res.data));
 		setLoading(false);
 	};
