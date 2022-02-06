@@ -1,2 +1,3 @@
 export const GET_EMPLOYEES = "GET_EMPLOYEES";
+export const CURRENT_EMPLOYEE = "CURRENT_EMPLOYEE";
 export const SET_LOADING = "SET_LOADING";

@@ -1,15 +1,6 @@
-.ves-b-filter-wrapper {
-	.filter-input {
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		max-width: 120rem;
-		margin: 1.5rem auto;
-		input {
-			width: 100%;
-		}
-		button {
-			min-width: 15rem;
-		}
-	}
+.ves-b-input-search {
+	width: 100%;
+	max-width: 123rem;
+    margin: 20px auto !important;
+    display: block;
 }

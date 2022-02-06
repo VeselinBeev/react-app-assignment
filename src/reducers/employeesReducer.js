@@ -1,17 +1,38 @@
-import { GET_EMPLOYEES, SET_LOADING } from "../actions/types";
+import { GET_EMPLOYEES, SET_LOADING, CURRENT_EMPLOYEE } from "../actions/types";
 
 const initialState = {
-	employees: [],
+	employees: [
+		{
+			id: null,
+			avatar: null,			
+			label: '',
+			title: '',
+			name: '',
+			employee: '',
+			bio: '',
+			bgColor :{
+				label: '',
+				value: ''
+			}
+		}
+	],
+	employee:null,
 	loading: false
 }
 
-export default (state = initialState, action) => {
+const employeeRedus = (state = initialState, action) => {
 	switch(action.type) {
 		case GET_EMPLOYEES:
 			return {
 				...state,
 				employees: action.payload,
 				loading: false
+			};
+		
+		case CURRENT_EMPLOYEE:
+			return {
+				...state,
+				employee: action.payload,
 			};
 		
 		case SET_LOADING:
@@ -23,3 +44,4 @@ export default (state = initialState, action) => {
 			return state;
 	}
 }
+export default employeeRedus;

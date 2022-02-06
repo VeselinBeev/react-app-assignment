@@ -164,3 +164,19 @@ select {
 select::-ms-expand {
 	display: none;
 }
+
+.item-full {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0px #656b61;
+    display: block;
+}
+.item-thumb {
+	width: 5rem;
+    height: 5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0px #656b61;
+    display: block;
+}
