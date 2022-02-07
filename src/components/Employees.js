@@ -11,7 +11,7 @@ const Employees = ({ employees, loading }) => {
 	return (
 		<Fragment>
 			{employees.map((employee) => (
-				<EmployeeItem employee={employee} key={employee}/>
+				<EmployeeItem employee={employee} key={employee.uuid}/>
 			))}
 		</Fragment>
 	)

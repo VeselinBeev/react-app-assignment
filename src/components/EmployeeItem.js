@@ -93,7 +93,7 @@ const EmployeeItem = ({ employee }) => {
 	return (
 		<Fragment>
 
-			<div className="ves-b-employee-list" key={employee.uuid} style={{
+			<div className="ves-b-employee-list" key={employee.id} style={{
 				backgroundColor: selectedBackground.value
 			}}>
 				{employee.label}
@@ -115,7 +115,7 @@ const EmployeeItem = ({ employee }) => {
 				</div>
 				<div className="list-content">
 					<p className="content-item">
-						<strong>Label:&nbsp;<input type="text" placeholder="Add Label" key={employee.id} value={label} onChange={(e) => setLabel(e.target.value)}></input></strong>
+						<strong>Label:&nbsp;<input type="text" placeholder="Add Label" key={employee.uuid} value={label} onChange={(event) => setLabel(event.target.value)}></input></strong>
 						{/* <div className="list-item">{label}</div> */}
 					</p>
 					<p className="content-item">
