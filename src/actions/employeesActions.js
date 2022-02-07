@@ -9,14 +9,6 @@ export const setEmployees = (employees) => {
 	};
 };
 
-// Set  employee
-export const setEmployee = employee => {
-	return {
-		type: GET_EMPLOYEES,
-		payload: employee,
-	};
-};
-
 export const setLoading = () => {
 	return {
 		type: SET_LOADING

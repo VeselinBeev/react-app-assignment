@@ -1,4 +1,4 @@
-import { GET_EMPLOYEES, SET_LOADING, CURRENT_EMPLOYEE } from "../actions/types";
+import { GET_EMPLOYEES, SET_LOADING } from "../actions/types";
 
 const initialState = {
 	employees: [
@@ -16,7 +16,6 @@ const initialState = {
 			}
 		}
 	],
-	employee:null,
 	loading: false
 }
 
@@ -27,12 +26,6 @@ const employeeRedus = (state = initialState, action) => {
 				...state,
 				employees: action.payload,
 				loading: false
-			};
-		
-		case CURRENT_EMPLOYEE:
-			return {
-				...state,
-				employee: action.payload,
 			};
 		
 		case SET_LOADING:
